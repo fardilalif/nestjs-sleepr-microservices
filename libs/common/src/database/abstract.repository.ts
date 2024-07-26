@@ -2,7 +2,7 @@ import { Logger, NotFoundException } from '@nestjs/common';
 import { FilterQuery, Model, Types, UpdateQuery } from 'mongoose';
 import { AbstractDocument } from './abstract.schema';
 
-// common repository when all other repositories will extend from
+// common repository where all other repositories will extend from
 // has command CRUD functionality
 // avoid writing duplicate code
 export abstract class AbstractRepository<TDocument extends AbstractDocument> {
