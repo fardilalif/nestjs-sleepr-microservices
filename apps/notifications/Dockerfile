@@ -25,4 +25,4 @@ RUN npm install --production
 
 COPY --from=development /usr/src/app/dist ./dist
 
-CMD [ "node", "dist/apps/payments/main" ]
+CMD [ "node", "dist/apps/notifications/main" ]
