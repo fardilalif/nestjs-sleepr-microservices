@@ -1,0 +1,72 @@
+steps:
+  # RESERVATIONS
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'asia-southeast1-docker.pkg.dev/sleepr-nestjs-431107/reservations/production',
+        '-f',
+        "apps/reservations/Dockerfile",
+        '.'
+      ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'push',
+        'asia-southeast1-docker.pkg.dev/sleepr-nestjs-431107/reservations/production',
+      ]
+  
+   # AUTH
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'asia-southeast1-docker.pkg.dev/sleepr-nestjs-431107/auth/production',
+        '-f',
+        "apps/auth/Dockerfile",
+        '.'
+      ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'push',
+        'asia-southeast1-docker.pkg.dev/sleepr-nestjs-431107/auth/production',
+      ]
+
+  # PAYMENTS
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'asia-southeast1-docker.pkg.dev/sleepr-nestjs-431107/payments/production',
+        '-f',
+        "apps/payments/Dockerfile",
+        '.'
+      ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'push',
+        'asia-southeast1-docker.pkg.dev/sleepr-nestjs-431107/payments/production',
+      ]
+
+  # NOTIFICATIONS
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'asia-southeast1-docker.pkg.dev/sleepr-nestjs-431107/notifications/production',
+        '-f',
+        "apps/notifications/Dockerfile",
+        '.'
+      ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'push',
+        'asia-southeast1-docker.pkg.dev/sleepr-nestjs-431107/notifications/production',
+      ]
