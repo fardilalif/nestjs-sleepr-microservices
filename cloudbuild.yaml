@@ -70,3 +70,5 @@ steps:
         'push',
         'asia-southeast1-docker.pkg.dev/sleepr-nestjs-431107/notifications/production',
       ]
+options:
+  logging: CLOUD_LOGGING_ONLY
