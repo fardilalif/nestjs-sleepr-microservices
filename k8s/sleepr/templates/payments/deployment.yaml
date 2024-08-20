@@ -24,7 +24,7 @@ spec:
               value: notifications
             - name: NOTIFICATIONS_PORT
               value: '3000'
-            - name: STRIPE_API_KEY
+            - name: STRIPE_SECRET_KEY
               valueFrom:
                 secretKeyRef:
                   name: stripe
